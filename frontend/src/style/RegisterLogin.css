@@ -1,0 +1,123 @@
+section {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background: linear-gradient(135deg, #ffffffc9, #b2b2b2, #ffffffc9, #7e7e7e);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.container {
+    width: 100vh;
+    height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(192, 192, 192, 0.873);
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.left-half {
+    flex: 1;
+    background: linear-gradient(135deg, #9bcaec, #b2b2b2, #ffffff, #7e7e7e);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: left;
+  }
+
+.left-half input{
+    width: 35vh;
+    height: 4vh;
+    padding: 5px;
+    margin: 1vh;
+    border-radius: 12px 12px 0px 0px;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 2px solid black;
+    box-shadow: 0 8px 20px rgba(192, 192, 192, 0.873);
+}
+
+.left-half h1{
+    text-align: center;
+    color: #404040;
+}
+
+.left-half label,
+.login
+{
+    font-size: 15px;
+    font-weight: 500;
+    color:#404040;
+}
+
+.left-half button{
+    width: 35vh;
+    height: 4vh;
+    margin-left: 11px;
+    border-radius: 16px;
+    border: none;
+    color: #404040c7;
+    background: linear-gradient(135deg, #4c8cfa, #9fdbfd, #7fd0ff, #4c8cfa);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.left-half button:hover{
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+  .right-half {
+    flex: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), 
+        url('https://i.pinimg.com/736x/e6/58/b6/e658b65781816bb646520af73f60ce33.jpg');
+    animation: scrollBackground 30s linear infinite;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.right-half h1{
+    color: #ffffffd4;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 0;
+}
+
+.right-half h2{
+    color: #4c8cfa;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 0.5;
+}
+
+
+.login a{
+    color: #4c8cfa;   
+}
+
+.login a:hover{
+    color: #7eacfc;
+}
+
