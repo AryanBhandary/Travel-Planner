@@ -89,7 +89,7 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
 
-    // ✅ SEND RESPONSE HERE (was missing before)
+  
     return res.status(200).json({
       message: 'Login successful',
       token,

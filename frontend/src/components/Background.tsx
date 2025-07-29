@@ -1,7 +1,9 @@
 import { FaBuilding, FaMapMarkedAlt, FaUtensils } from "react-icons/fa";
 import "../style/Background.css"
+import { useNavigate } from "react-router-dom";
 
 function Background(){
+    const navigate = useNavigate();
     return(
         <>
             <div className="back-section">
@@ -11,7 +13,7 @@ function Background(){
                     <p>From the bustling streets of Kathmandu to the serene lakes <br></br>
                         of Pokhara, explore the diverse cities that showcase Nepal's rich <br></br>
                         culture and breathtaking landscapes.</p>
-                    <button className="explore-btn">Explore</button>
+                        <button className="explore-btn" onClick={() => navigate("/cities")}>Explore</button>
 
                     <div className="info-row">
                         <div className="info-box">

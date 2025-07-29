@@ -23,7 +23,7 @@ function Login() {
 
       const user = res.data.user;
       if (user.role === 'admin') {
-        navigate('/admindashboard');  // Redirect admins here
+        navigate('/admin');  // Redirect admins here
       } else if (user.role === 'traveler') {
         navigate('/home');             // Redirect regular users here
       } else if (user.role === 'provider'){

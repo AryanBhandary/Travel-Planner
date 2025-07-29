@@ -1,9 +1,37 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
     background-color: #f9f7f4;
+    
   }
   
   .flex-parent {
@@ -13,6 +41,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     margin: 0 10%;
+    animation: fadeIn 1s ease-in-out;
   }
   
   .left-col,

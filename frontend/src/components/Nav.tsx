@@ -9,7 +9,7 @@ function Nav(){
                 </div>
                 <div>
                 <ul className="nav-links">
-                    <li><a href="/" className="nav-link"><FaHome /> Home</a></li>
+                    <li><a href="/home" className="nav-link"><FaHome /> Home</a></li>
                     <li><a href="/cities" className="nav-link"><FaCity /> Cities</a></li>
                     <li><a href="/bookings" className="nav-link"><FaBook /> My Bookings</a></li>
                     <li><a href="/profile" className="nav-link"><FaUser /> Profile</a></li>

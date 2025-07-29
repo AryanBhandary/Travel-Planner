@@ -1,3 +1,12 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s;
+  -webkit-text-fill-color: #000 !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2) !important;
+}
+
 section {
     margin: 0;
     display: flex;
@@ -17,6 +26,15 @@ section {
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+@keyframes scrollBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
 
 
 .container {
@@ -41,6 +59,7 @@ section {
     align-items: center;
     padding: 2rem;
     text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
   }
 
 .left-half input{
@@ -48,11 +67,11 @@ section {
     height: 4vh;
     padding: 5px;
     margin: 1vh;
-    border-radius: 12px 12px 0px 0px;
-    background-color: #ffffffb0;
+    background-color: rgba(255, 255, 255, 0);
     border: none;
-    border-bottom: 2px solid black;
-    box-shadow: 0 8px 20px rgba(192, 192, 192, 0.873);
+    border-bottom: 0.5px solid rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .left-half h1{
@@ -60,7 +79,11 @@ section {
     color: #404040;
 }
 
-.left-half label,
+.left-half label{
+    font-size: 18px;
+    font-weight: 700;
+    color:#404040;
+}
 .login
 {
     font-size: 15px;
