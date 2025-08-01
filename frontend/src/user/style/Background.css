@@ -16,6 +16,17 @@
   position: relative;
   overflow: hidden;
 }
+
+.back-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.499); /* darkness level */
+  z-index: 0; /* behind the text */
+}
 @keyframes scrollBackground {
   0% {
     background-position: 0% 50%;

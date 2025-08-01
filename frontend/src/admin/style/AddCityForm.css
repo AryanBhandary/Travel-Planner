@@ -1,0 +1,88 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #f8fafc;
+  }
+  
+  .add-form {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-row label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #334155;
+    font-size: 0.9rem;
+  }
+  
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.15s ease;
+    background-color: #ffffff;
+  }
+  
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+  }
+  
+  .form-row textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  .add-form button[type="submit"] {
+    width: 100%;
+    padding: 0.65rem;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .add-form button[type="submit"]:hover {
+    background-color: #4f46e5;
+  }
+  
+  /* Required field indicator */
+  .form-row label:after {
+    content: " *";
+    color: #ef4444;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .add-form {
+      padding: 1.25rem;
+    }
+    
+    .form-row {
+      margin-bottom: 1rem;
+    }
+  }

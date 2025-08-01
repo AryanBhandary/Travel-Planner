@@ -1,10 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const Traveler = require('../models/Traveler');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import express from 'express';
+import Traveler from '../models/Traveler.js';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = 'your_jwt_secret_here'; // Use .env in production
+const router = express.Router();
+const JWT_SECRET = 'your_jwt_secret_here';
 
 // ===== Middleware: Token Verification =====
 function authenticateToken(req, res, next) {
@@ -102,4 +102,4 @@ router.post('/login', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

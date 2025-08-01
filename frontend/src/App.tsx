@@ -1,14 +1,15 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './style/App.css'
+import './user/style/App.css'
 import Home from './HomePage'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Admin from './pages/Admin'
+import Login from './user/pages/Login'
+import Register from './user/pages/Register'
+import Admin from './admin/pages/Admin'
 import Cities from './Cities'
-import Bookings from './pages/Bookings'
-import CityDetails from './pages/CityDetails'
-import Profile from './pages/Profile'
+import Bookings from './user/pages/Bookings'
+import CityDetails from './user/pages/CityDetails'
+import Profile from './user/pages/Profile'
+import BookingForm from './user/components/BookingForm'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/bookings" element={<Bookings />} />
         <Route path='/profile' element={<Profile />} />
         <Route path="/city/:id" element={<CityDetails />} />
+        <Route path="/bookingForm" element={<BookingForm />} />
       </Routes>
     
     </BrowserRouter>

@@ -8,6 +8,7 @@ export interface City {
     bestTimeToVisit: string;
     bucketListCount: number;
     coordinates: [number, number];
+    mapLink: string[];
     attractions: string[];
     localCuisine: string[];
     averageTemperature: string;
@@ -26,6 +27,7 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to December",
         bucketListCount: 1250,
         coordinates: [27.7172, 85.3240],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
         attractions: ["Pashupatinath Temple", "Garden of Dreams", "Hanuman Dhoka Palace", "Asan Bazaar"],
         localCuisine: ["Dal Bhat", "Momo", "Newari Khaja Set", "Yomari"],
         averageTemperature: "20°C (68°F)",
@@ -41,6 +43,7 @@ const MajorCitiesData = [
         bestTimeToVisit: "September to November",
         bucketListCount: 980,
         coordinates: [28.2096, 83.9856],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
         attractions: ["Davis Falls", "Gupteshwor Cave", "International Mountain Museum", "Seti River Gorge"],
         localCuisine: ["Gundruk", "Thakali Khana", "Rainbow Trout", "Sel Roti"],
         averageTemperature: "22°C (72°F)",
@@ -56,6 +59,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to March",
         bucketListCount: 756,
         coordinates: [27.6710, 85.4298],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Bhaktapur Durbar Square", "Dattatreya Temple", "Peacock Window", "Juju Dhau (King Curd)"],
         localCuisine: ["Juju Dhau", "Bara", "Chatamari", "Wo (Lentil Pancake)"],
         averageTemperature: "19°C (66°F)",
@@ -71,6 +76,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to March",
         bucketListCount: 542,
         coordinates: [27.5291, 84.3542],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Chitwan National Park", "Elephant Breeding Center", "Tharu Cultural Museum", "Rapti River"],
         localCuisine: ["Tharu Traditional Food", "Fish Curry", "Dhikri", "Sidhara"],
         averageTemperature: "25°C (77°F)",
@@ -86,6 +93,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to March",
         bucketListCount: 423,
         coordinates: [27.4664, 83.2765],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Sacred Garden", "Lumbini Museum", "World Peace Flame", "Crane Sanctuary"],
         localCuisine: ["Vegetarian Buddhist Cuisine", "Kheer", "Samosas", "Tibetan Bread"],
         averageTemperature: "24°C (75°F)",
@@ -101,6 +110,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "September to November",
         bucketListCount: 287,
         coordinates: [27.9252, 84.4198],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Thani Mai Temple", "Siddha Cave", "Bindabasini Temple", "Old Bazaar"],
         localCuisine: ["Traditional Newari Food", "Gundruk Soup", "Local Honey", "Organic Vegetables"],
         averageTemperature: "18°C (64°F)",
@@ -116,6 +127,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to December",
         bucketListCount: 198,
         coordinates: [27.9957, 84.6194],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Gorkha Palace", "Gorakhnath Cave", "Upallokot", "Manakamana Temple"],
         localCuisine: ["Dal Bhat", "Gundruk", "Local Millet Beer", "Yak Cheese"],
         averageTemperature: "16°C (61°F)",
@@ -131,6 +144,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to March",
         bucketListCount: 634,
         coordinates: [27.6588, 85.3247],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Patan Museum", "Golden Temple (Hiranya Varna Mahavihar)", "Mahabouddha Temple", "Central Zoo"],
         localCuisine: ["Newari Cuisine", "Choila", "Samay Baji", "Lassi"],
         averageTemperature: "20°C (68°F)",
@@ -146,6 +161,8 @@ const MajorCitiesData = [
         bestTimeToVisit: "October to March",
         bucketListCount: 312,
         coordinates: [26.7288, 85.9293],
+        mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28256.547177897402!2d85.327872!3d27.7151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191b0080f92b%3A0x3d08c08a7f53eace!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1754022863349!5m2!1sen!2snp",
+
         attractions: ["Janaki Temple", "Ram Mandir", "Dhanush Sagar", "Mithila Art Centers"],
         localCuisine: ["Madhesi Cuisine", "Fish Curry", "Kheer", "Pedas"],
         averageTemperature: "23°C (73°F)",

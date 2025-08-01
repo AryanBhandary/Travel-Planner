@@ -27,7 +27,7 @@
 
 .city-card {
     width: 40vh;  /* fixed width */
-    height: 45vh;
+    height: 50vh;
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -54,6 +54,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.city-card:hover .image-container img {
+    transform: scale(1.1); /* zoom-in effect */
 }
 
 .overlay {
