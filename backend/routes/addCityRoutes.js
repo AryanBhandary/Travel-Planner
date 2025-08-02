@@ -20,11 +20,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET city by custom string ID
+// GET city by custom string ID (e.g. 'kathmandu')
 router.get('/:id', async (req, res) => {
   const cityId = req.params.id;
   console.log('GET /api/cities/:id called with id =', cityId);
-  
+
   try {
     const city = await City.findOne({ id: cityId });
     if (!city) {
@@ -35,6 +35,20 @@ router.get('/:id', async (req, res) => {
     res.json(city);
   } catch (err) {
     console.error('Error fetching city:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// DELETE city by custom string ID
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedCity = await City.findOneAndDelete({ id: req.params.id });
+    if (!deletedCity) {
+      return res.status(404).json({ message: 'City not found' });
+    }
+    res.status(200).json({ message: 'City deleted successfully' });
+  } catch (error) {
+    console.error("Error deleting city:", error);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -78,7 +92,7 @@ router.post('/', async (req, res) => {
       fullDescription,
       highlights: parseCommaSeparated(highlights),
       bestTimeToVisit,
-      bucketListCount: 0,
+      bucketListCount: 0, // static initial value, no updates
       mapLink,
       attractions: parseCommaSeparated(attractions),
       localCuisine: parseCommaSeparated(localCuisine),
@@ -99,5 +113,6 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: err.message || 'Server error' });
   }
 });
+
 
 export default router;

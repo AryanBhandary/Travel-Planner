@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from '../components/Nav';
-import '../style/Profile.css'; // External CSS
+import AdminNav from '../components/AdminNav';
+import '../style/AdminProfile.css'; // External CSS
 
 interface User {
   name: string;
@@ -10,7 +10,7 @@ interface User {
   number: string;
 }
 
-function Profile() {
+function AdminProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);
 
@@ -32,7 +32,7 @@ function Profile() {
 
   return (
     <>
-      <Nav /> <br />
+      <AdminNav /> <br />
       <div className="profile-container">
         <div className="profile-card">
           <h2>👤 My Profile</h2>
@@ -53,4 +53,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default AdminProfile;

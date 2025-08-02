@@ -1,10 +1,10 @@
-import AddCityForm from "./AddCityForm";
+
+import AdminNav from "../components/AdminNav";
 
 function Admin (){
     return(
         <>
-        <h1>This is Admin</h1>
-        <AddCityForm />
+        <AdminNav /> 
         </>
     )
 }

@@ -4,50 +4,58 @@ import "../style/AddCityForm.css";
 
 function AddCityForm() {
   const [formData, setFormData] = useState({
-    id: '',
-    name: '',
-    image: '',
-    shortDescription: '',
-    fullDescription: '',
-    highlights: '',
-    bestTimeToVisit: '',
-    bucketListCount: 0,
-    mapLink: '',
-    attractions: '',
-    localCuisine: '',
-    averageTemperature: '',
-    altitude: '',
+    id: "",
+    name: "",
+    image: "",
+    shortDescription: "",
+    fullDescription: "",
+    highlights: "",
+    bestTimeToVisit: "",
+    mapLink: "",
+    attractions: "",
+    localCuisine: "",
+    averageTemperature: "",
+    altitude: "",
   });
 
+  const [showModal, setShowModal] = useState(false);
+  const [showSuccessBanner, setShowSuccessBanner] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:5000/api/cities', formData);
-      alert(res.data.message);
-      setFormData({
-        id: '', // Reset ID field
-        name: '',
-        image: '',
-        shortDescription: '',
-        fullDescription: '',
-        highlights: '',
-        bestTimeToVisit: '',
-        bucketListCount: 0,
-        mapLink: '',
-        attractions: '',
-        localCuisine: '',
-        averageTemperature: '',
-        altitude: '',
+    setShowModal(true); // trigger confirmation popup
+  };
+
+  const confirmAdd = () => {
+    axios.post("http://localhost:5000/api/cities", formData)
+  .then(() => {
+                setShowSuccessBanner(true);
+                setTimeout(() => setShowSuccessBanner(false), 5000); // hide after 5s
+                setShowModal(false);
+                setFormData({
+                  id: "",
+                  name: "",
+                  image: "",
+                  shortDescription: "",
+                  fullDescription: "",
+                  highlights: "",
+                  bestTimeToVisit: "",
+                  mapLink: "",
+                  attractions: "",
+                  localCuisine: "",
+                  averageTemperature: "",
+                  altitude: "",
+                });
+              })
+      .catch(err => {
+        console.error("Error adding city:", err);
+        alert("Error adding city. Please check your inputs.");
+        setShowModal(false);
       });
-    } catch (error: any) {
-      console.error('Add city error:', error.response?.data || error.message);
-      alert(error.response?.data?.error || 'Failed to add city');
-    }
   };
 
   return (
@@ -116,8 +124,27 @@ function AddCityForm() {
 
     <button type="submit">Add City</button>
   </form>
-</div>
-    );
+  {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h3>Confirm City Addition</h3>
+            <p>Are you sure you want to add the city <strong>{formData.name}</strong>?</p>
+            <div className="modal-actions">
+              <button onClick={confirmAdd} className="confirm-delete">Yes, Add</button>
+              <button onClick={() => setShowModal(false)} className="cancel-delete">Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+{showSuccessBanner && (
+  <div className="success-banner">
+    City added successfully!
+    <button className="close-btn" onClick={() => setShowSuccessBanner(false)}>×</button>
+  </div>
+)}
+      </div>
+  );
 }
 
 export default AddCityForm;

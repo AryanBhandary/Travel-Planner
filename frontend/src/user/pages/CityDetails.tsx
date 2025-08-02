@@ -6,7 +6,7 @@ import Nav from "../components/Nav";
 import "../style/CityDetails.css";
 
 interface City {
-  id: string;                     // <-- string here
+  _id: string;
   name: string;
   image: string;
   shortDescription: string;
@@ -67,7 +67,11 @@ function CityDetails() {
         <br />
       </div>
 
-      <div className="city-details-header">
+      <div className="city-details-header" style={{ position: "relative" }}>
+        <button className="back-button" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
+
         <div className="city-image">
           <img src={city.image} alt={city.name} />
         </div>
@@ -125,23 +129,15 @@ function CityDetails() {
 
           <div className="div6 card cta">
             <h3>Plan Your Visit</h3>
-            <button className="book-btn">Add to Wishlist</button>
-            <button
-              className="book-btn"
-              onClick={() => {
-                navigate("/bookingForm");
-              }}
-            >
+            <button className="book-btn">Add to Bucket List</button>
+            <button className="book-btn" onClick={() => navigate("/bookingForm")}>
               Book a Trip
             </button>
           </div>
 
           <div className="map-container">
             <iframe src={city.mapLink} className="map" title="city-map" />
-            <button
-              className="map-btn"
-              onClick={() => window.open(city.mapLink, "_blank")}
-            >
+            <button className="map-btn" onClick={() => window.open(city.mapLink, "_blank")}>
               View on map
             </button>
           </div>

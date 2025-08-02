@@ -1,56 +1,138 @@
 * {
   box-sizing: border-box;
 }
+
 .navbar {
-    position: fixed;
-    width: 100%;
-    background-color: #ffffffc9;
-    padding: 1rem 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    z-index: 1000;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-link {
-    color: #414141;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #4c8cfa;
-    transition: width 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #4c8cfa;
-  }
-  
-  .nav-link:hover::after {
-    width: 100%;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0052cc;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0052cc;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown container must be relative for positioning */
+.navbar ul.nav-links li {
+  position: relative;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffffb4;
+  color: #222;;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 170px;
+  padding: 8px 0;
+  z-index: 1500;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  cursor: pointer;
+}
+
+/* Dropdown list items */
+.dropdown-menu li {
+  padding: 10px 20px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  list-style: none;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.logout{
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logout::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #cc0000;
+  transition: width 0.3s ease;
+}
+
+.logout:hover {
+  color: #cc0000;
+}
+
+.logout:hover::after {
+  width: 100%;
+}

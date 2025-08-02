@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -18,17 +18,30 @@ function Login() {
     try {
       const res = await axios.post('http://localhost:5000/api/users/login', formData);
 
-      // Save token if needed
-      localStorage.setItem('token', res.data.token);
-
       const user = res.data.user;
+      const token = res.data.token;
+
+      // ✅ Save full user data with token & role in localStorage
+      localStorage.setItem('user', JSON.stringify({
+        token,
+        role: user.role,
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        number: user.number, // ✅ Include number in localStorage
+      }));
+
+      // ✅ Redirect based on role
       if (user.role === 'admin') {
-        navigate('/admin');  // Redirect admins here
+        navigate('/admin');
       } else if (user.role === 'traveler') {
-        navigate('/home');             // Redirect regular users here
-      } else if (user.role === 'provider'){
-        navigate('/providerdashboard');  // Redirect providers here
+        navigate('/home');
+      } else if (user.role === 'provider') {
+        navigate('/providerdashboard');
+      } else {
+        navigate('/unauthorized');
       }
+
     } catch (err: any) {
       alert(err.response?.data?.error || 'Login failed');
     }
