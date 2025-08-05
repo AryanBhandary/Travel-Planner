@@ -1,151 +1,132 @@
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 9999s ease-in-out 0s;
-  -webkit-text-fill-color: #000 !important;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2) !important;
+.page-background {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+      rgba(69, 168, 250, 0.4),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://imgs.search.brave.com/8dwAZlBFRVUppAYHECtBJ4Tu19ssJShpRb5RAXZo5Uo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMjE0/MzUzNy5qcGc');
+  
+  background-repeat: no-repeat;
+  background-size: 130% auto; /* double width */
+  background-position: left center; /* start left */
+  
+  animation: backgroundMove 60s linear infinite;
 }
 
-section {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    background: linear-gradient(135deg, #ffffffc9, #b2b2b2, #ffffffc9, #7e7e7e);
-    background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-align: center;
-}
-
-@keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes scrollBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+@keyframes backgroundMove {
+  0% {
+    background-position: left center;
   }
+  50% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
+}
 
 
+
+/* Form Card Container */
 .container {
-    width: 100vh;
-    height: 70vh;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(192, 192, 192, 0.873);
-    overflow: hidden;
-    display: flex;
-    position: relative;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  max-width: 500px; /* or 500px */
+  min-width: 380px;
+  margin: 80px auto;
+  padding: 30px 28px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.left-half {
-    flex: 1;
-    background: linear-gradient(135deg, #9bcaec, #b2b2b2, #ffffff, #7e7e7e);
-    color: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    text-align: left;
-    animation: fadeIn 0.5s ease-in-out;
+/* Form Header */
+.container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+/* Input Fields */
+input {
+  padding: 11px 14px;
+  border: 1px solid #ccc;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #fdfdfd;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #0077cc;
+  box-shadow: 4px 4px 10px rgba(0, 119, 204, 0.4);
+  outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  padding: 12px;
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 119, 204, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+  transform: scale(1.03);
+}
+
+/* Switch Link */
+.switch {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.switch a {
+  color: #0077cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 40px 16px;
+    padding: 25px 20px;
   }
-
-.left-half input{
-    width: 35vh;
-    height: 4vh;
-    padding: 5px;
-    margin: 1vh;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    border-bottom: 0.5px solid rgb(0, 0, 0);
-    font-size: 16px;
-    font-weight: 400;
 }
-
-.left-half h1{
-    text-align: center;
-    color: #404040;
-}
-
-.left-half label{
-    font-size: 18px;
-    font-weight: 700;
-    color:#404040;
-}
-.login
-{
-    font-size: 15px;
-    font-weight: 500;
-    color:#404040;
-}
-
-.left-half button{
-    width: 35vh;
-    height: 4vh;
-    margin-left: 11px;
-    border-radius: 16px;
-    border: none;
-    color: #404040c7;
-    background: linear-gradient(135deg, #4c8cfa, #9fdbfd, #7fd0ff, #4c8cfa);
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all ease 0.3s;
-}
-
-.left-half button:hover{
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-  .right-half {
-    flex: 1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), 
-        url('https://i.pinimg.com/736x/e6/58/b6/e658b65781816bb646520af73f60ce33.jpg');
-    animation: scrollBackground 30s linear infinite;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-.right-half h1{
-    color: #ffffffd4;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.right-half h2{
-    color: #4c8cfa;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 0.5;
-}
-
-.switch{
-    font-size: 18px;
-    font-weight: 700;
-    color: #404040;
-}
-
-.switch a{
-    color: #4c8cfa;   
-}
-
-.switch a:hover{
-    color: #7eacfc;
-}
-

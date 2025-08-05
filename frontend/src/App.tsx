@@ -15,13 +15,14 @@ import UserRoute from './user/components/UserRoute'
 import CityManipulation from './admin/pages/CityManipulation'
 import BookingRequests from './admin/pages/BookingRequests'
 import AdminProfile from './admin/pages/AdminProfile'
+import GetStarted from './user/pages/GetStarted'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        <Route path="/" element={<Register />} />
+        <Route path="/" element={<GetStarted />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 
         {/* Logged in users Routes */}
