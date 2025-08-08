@@ -39,8 +39,8 @@
 |----------------------------------|---------------|
 | Landing Page & Role redirection | ✅ Done        |
 | Overall Frontend                | ✅ Basic ready |
-| Map integration                 | ⏳ In Progress |
-| Admin panel                     | 🔜 Coming soon |
+| Map integration                 | ✅ Done        |
+| Admin panel                     | ⏳ In Progress |
 | Vehicle rental module           | 🔜 Planned     |
 | Search/filter attractions       | 🔜 Planned     |
 
