@@ -23,13 +23,13 @@
 
 ## 💻 Tech Stack
 
-| Layer        | Technology              |
-|--------------|-------------------------|
-| Frontend     | React.js, Tailwind CSS  |
-| Backend      | Node.js, Express.js     |
-| Database     | MongoDB                 |
-| Maps         | Leaflet.js + OpenStreetMap |
-| Status       | ⏳ In Progress           |
+| Layer        | Technology                |
+|--------------|---------------------------|
+| Frontend     | React.js, Tailwind CSS    |
+| Backend      | Node.js, Express.js       |
+| Database     | MongoDB                   |
+| Maps         | Google maps (embaded map) |
+| Status       | ⏳ In Progress            |
 
 ---
 
