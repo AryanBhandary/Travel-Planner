@@ -31,6 +31,9 @@ const travelerSchema = new mongoose.Schema({
     enum: ['traveler', 'provider', 'admin'], 
     default: 'traveler' },
     
+}, 
+{
+  timestamps: true
 });
 
 module.exports = mongoose.model('Traveler', travelerSchema);

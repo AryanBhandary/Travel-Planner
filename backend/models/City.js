@@ -14,6 +14,9 @@ const citySchema = new mongoose.Schema({
   localCuisine: { type: [String], required: true },
   averageTemperature: { type: String, required: true },
   altitude: { type: String, required: true },
+}, 
+{
+  timestamps: true
 });
 
 export default mongoose.model('City', citySchema);
