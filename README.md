@@ -56,9 +56,9 @@ git clone https://github.com/AryanBhandary/explore-nepal.git
 cd explore-nepal
 
 # Install frontend
-cd client
+cd frontend
 npm install
 
 # Install backend
-cd ../server
+cd ../backend
 npm install
