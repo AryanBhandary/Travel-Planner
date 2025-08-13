@@ -18,20 +18,30 @@ function Login() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     try {
       const res = await axios.post("http://localhost:5000/api/users/login", formData);
-
-      // Save user info in localStorage on successful login
+  
+      const { token, user } = res.data;
+  
+      // Save user info in localStorage
       localStorage.setItem("user", JSON.stringify({
-        token: res.data.token,
-        role: res.data.user.role,
-        name: res.data.user.name,
-        email: res.data.user.email,
-        number: res.data.user.number,
+        token,
+        role: user.role,
+        name: user.name,
+        email: user.email,
+        number: user.number,
       }));
-      
-      navigate('/home');
+  
+      // Role-based redirection
+      if (user.role === "admin") {
+        navigate("/admin");
+      } else if (user.role === "traveler") {
+        navigate("/home");
+      } else {
+        // fallback route (optional)
+        navigate("/unauthorized");
+      }
     } catch (err: any) {
       alert(err.response?.data?.error || "Login failed");
     }
@@ -41,6 +51,9 @@ function Login() {
     <section className='page-background'>
       <button className="back-button" onClick={() => navigate(-1)}>
           ← Back
+        </button><br />
+        <button className="btn" onClick={() => navigate('/')}>
+          Get Started
         </button>
       <div className="container">
         <h1>Login</h1>

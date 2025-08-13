@@ -71,8 +71,8 @@
 }
 
 .explore-btn {
-  color: #ffffff;
-  background-color: #4c8cfa;
+  color: #000000;
+  background-color: #ffffff;
   border: none;
   height: 50px;
   width: 200px;
@@ -82,12 +82,13 @@
   cursor: pointer;
   margin-top: 1.5rem;
   transition: all 0.3s ease;
+  border: 2px solid #000000;
 }
 
 .explore-btn:hover {
-  background-color: #2563eb; /* Darker on hover */
+  background-color: #000000; /* Darker on hover */
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
 }
 
 

@@ -127,7 +127,7 @@ function CityDetails() {
             </p>
           </div>
 
-          <div className="div6 card cta">
+          <div className="div6 card ">
             <h3>Plan Your Visit</h3>
             <button className="book-btn">Add to Bucket List</button>
             <button className="book-btn" onClick={() => navigate("/bookingForm")}>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../style/RegisterLogin.css';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +16,14 @@ function Register() {
     role: 'traveler',
   });
 
+  // Redirect if already logged in
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+    if (storedUser?.token) {
+      navigate("/home");
+    }
+  }, [navigate]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -30,10 +38,35 @@ function Register() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/register", formData);
-      alert(res.data.message);
-      navigate('/home');
+      const res = await axios.post(
+        "http://localhost:5000/api/users/register",
+        formData
+      );
+
+      const { token, user } = res.data;
+
+      if (!token || !user) {
+        alert("Registration successful! Please login.");
+        return navigate("/login");
+      }
+
+      // Store the user object in localStorage
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          token,
+          role: user.role,
+          name: user.name,
+          email: user.email,
+          number: user.number,
+        })
+      );
+
+      alert(res.data.message || "Registration successful!");
+      navigate("/home");
+
     } catch (err: any) {
+      console.error("Registration error:", err.response || err);
       alert(err.response?.data?.error || "Registration failed");
     }
   };
@@ -41,8 +74,12 @@ function Register() {
   return (
     <section className='page-background'>
       <button className="back-button" onClick={() => navigate(-1)}>
-          ← Back
-        </button>
+        ← Back
+      </button>
+      <button className="btn" onClick={() => navigate('/')}>
+        Get Started
+      </button>
+
       <div className="container">
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>

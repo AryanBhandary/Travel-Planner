@@ -88,22 +88,26 @@ input:focus {
 
 /* Submit Button */
 button[type="submit"] {
-  padding: 12px;
-  background-color: #0077cc;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  border: none;
-  border-radius: 30px;
+  padding: 0.6rem 1.4rem;
+  border: 2.5px solid #000000;
+  background: white;
+  color: #000000;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0, 119, 204, 0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
 }
 
 button[type="submit"]:hover {
-  background-color: #005fa3;
-  transform: scale(1.03);
+  background: #000000;
+  color: white;
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.35);
+  transform: translateY(-2px);
 }
+
+
 
 /* Switch Link */
 .switch {
@@ -129,4 +133,27 @@ button[type="submit"]:hover {
     margin: 40px 16px;
     padding: 25px 20px;
   }
+}
+
+
+.btn{
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  background: rgba(0, 0, 0, 0.171);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  transition: transform 0.7s ease, background-color 0.7s ease;
+  background: rgba(0, 0, 0, 0.493);
 }

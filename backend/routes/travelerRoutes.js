@@ -56,7 +56,22 @@ router.post('/register', async (req, res) => {
     await newTraveler.save();
     console.log("User registered:", newTraveler.email);
 
-    return res.status(201).json({ message: 'User registered!' });
+    // ✅ Create payload & token just like login
+    const payload = {
+      id: newTraveler._id,
+      role: newTraveler.role,
+      email: newTraveler.email,
+      name: `${newTraveler.firstName} ${newTraveler.lastName}`,
+      number: newTraveler.number
+    };
+
+    const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
+
+    return res.status(201).json({
+      message: 'Registration successful',
+      token,
+      user: payload
+    });
 
   } catch (err) {
     console.error('Registration error:', err);
