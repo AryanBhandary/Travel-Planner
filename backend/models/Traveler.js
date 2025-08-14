@@ -30,6 +30,9 @@ const travelerSchema = new mongoose.Schema({
   role:      { type: String, 
     enum: ['traveler', 'provider', 'admin'], 
     default: 'traveler' },
+
+
+  bucketList: [{ type: mongoose.Schema.Types.ObjectId, ref: "City" }]
     
 }, 
 {
