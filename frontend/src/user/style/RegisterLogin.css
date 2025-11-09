@@ -1,0 +1,159 @@
+.page-background {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+      rgba(69, 168, 250, 0.4),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://imgs.search.brave.com/8dwAZlBFRVUppAYHECtBJ4Tu19ssJShpRb5RAXZo5Uo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMjE0/MzUzNy5qcGc');
+  
+  background-repeat: no-repeat;
+  background-size: 130% auto; /* double width */
+  background-position: left center; /* start left */
+  
+  animation: backgroundMove 60s linear infinite;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: left center;
+  }
+  50% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
+}
+
+
+
+/* Form Card Container */
+.container {
+  max-width: 500px; /* or 500px */
+  min-width: 380px;
+  margin: 80px auto;
+  padding: 30px 28px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Form Header */
+.container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+/* Input Fields */
+input {
+  padding: 11px 14px;
+  border: 1px solid #ccc;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #fdfdfd;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #0077cc;
+  box-shadow: 4px 4px 10px rgba(0, 119, 204, 0.4);
+  outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  padding: 0.6rem 1.4rem;
+  border: 2.5px solid #000000;
+  background: white;
+  color: #000000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+}
+
+button[type="submit"]:hover {
+  background: #000000;
+  color: white;
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.35);
+  transform: translateY(-2px);
+}
+
+
+
+/* Switch Link */
+.switch {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.switch a {
+  color: #0077cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 40px 16px;
+    padding: 25px 20px;
+  }
+}
+
+
+.btn{
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  background: rgba(0, 0, 0, 0.171);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  transition: transform 0.7s ease, background-color 0.7s ease;
+  background: rgba(0, 0, 0, 0.493);
+}
