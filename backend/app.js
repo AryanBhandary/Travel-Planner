@@ -13,6 +13,11 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/cities', cityRoutes);
 
+app.use(cors({
+  origin: "https://travel-planner-gold-omega.vercel.app/",  // replace with your real Vercel link
+  credentials: true
+}));
+
 async function main() {
   try {
     await mongoose.connect(
